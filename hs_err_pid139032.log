@@ -1,0 +1,264 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 123731968 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3713), pid=139032, tid=132412
+#
+# JRE version:  (21.0.8+9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.8+9-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.1\lib\idea_rt.jar=59306:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.1\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 --module-path=C:\Users\mukab\.m2\repository\org\openjfx\javafx-controls\21-ea+24\javafx-controls-21-ea+24-win.jar;C:\Users\mukab\.m2\repository\eu\hansolo\fx\heatmap\21.0.11\heatmap-21.0.11.jar;C:\Users\mukab\.m2\repository\com\gluonhq\attach\audio\4.0.13\audio-4.0.13.jar;C:\Users\mukab\.m2\repository\org\controlsfx\controlsfx\11.1.2\controlsfx-11.1.2.jar;C:\Users\mukab\.m2\repository\com\gluonhq\attach\lifecycle\4.0.13\lifecycle-4.0.13.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-fxml\21-ea+24\javafx-fxml-21-ea+24-win.jar;C:\Users\mukab\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.6.0\kotlin-stdlib-1.6.0-modular.jar;C:\Users\mukab\.m2\repository\com\github\almasb\fxgl\17.2\fxgl-17.2.jar;C:\Users\mukab\.m2\repository\com\github\almasb\fxgl-entity\17.2\fxgl-entity-17.2.jar;C:\Users\mukab\.m2\repository\com\github\almasb\fxgl-io\17.2\fxgl-io-17.2.jar;C:\Users\mukab\.m2\repository\com\github\almasb\fxgl-core\17.2\fxgl-core-17.2.jar;C:\Users\mukab\.m2\repository\org\kordamp\ikonli\ikonli-javafx\12.3.1\ikonli-javafx-12.3.1.jar;C:\Users\mukab\.m2\repository\com\gluonhq\attach\util\4.0.13\util-4.0.13.jar;C:\Users\mukab\.m2\repository\com\gluonhq\attach\storage\4.0.13\storage-4.0.13.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-swing\21.0.4\javafx-swing-21.0.4-win.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-media\21-ea+24\javafx-media-21-ea+24-win.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-base\21.0.4\javafx-base-21.0.4-win.jar;C:\Users\mukab\.m2\repository\org\kordamp\ikonli\ikonli-core\12.3.1\ikonli-core-12.3.1.jar;C:\Users\mukab\.m2\repository\com\github\almasb\fxgl-gameplay\17.2\fxgl-gameplay-17.2.jar;C:\Users\mukab\.m2\repository\eu\hansolo\toolbox\17.0.35\toolbox-17.0.35.jar;C:\Users\mukab\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.1\jackson-databind-2.12.1.jar;C:\Users\mukab\.m2\repository\eu\hansolo\toolboxfx\21.0.7\toolboxfx-21.0.7.jar;C:\Users\mukab\.m2\repository\com\github\almasb\fxgl-scene\17.2\fxgl-Djdk.module.main=com.pharmacyfx com.pharmacyfx/com.pharmacyfx.DBConnection
+
+Host: AMD Ryzen 5 5625U with Radeon Graphics         , 12 cores, 7G,  Windows 11 , 64 bit Build 26100 (10.0.26100.5074)
+Time: Thu Oct  2 17:41:57 2025 E. Africa Standard Time elapsed time: 1.093390 seconds (0d 0h 0m 1s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000024312190450):  JavaThread "Unknown thread" [_thread_in_vm, id=132412, stack(0x0000009976600000,0x0000009976700000) (1024K)]
+
+Stack: [0x0000009976600000,0x0000009976700000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6d2449]
+V  [jvm.dll+0x8ae341]
+V  [jvm.dll+0x8b08be]
+V  [jvm.dll+0x8b0fa3]
+V  [jvm.dll+0x280c96]
+V  [jvm.dll+0x6cec15]
+V  [jvm.dll+0x6c2c3a]
+V  [jvm.dll+0x35867a]
+V  [jvm.dll+0x360246]
+V  [jvm.dll+0x3b1f9e]
+V  [jvm.dll+0x3b2248]
+V  [jvm.dll+0x32c8fc]
+V  [jvm.dll+0x32d45b]
+V  [jvm.dll+0x8775d9]
+V  [jvm.dll+0x3bed71]
+V  [jvm.dll+0x8605d3]
+V  [jvm.dll+0x4530ee]
+V  [jvm.dll+0x454d31]
+C  [jli.dll+0x5278]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x8d9c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffcd15211c8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x00000243121e46f0 WorkerThread "GC Thread#0"                     [id=140744, stack(0x0000009976700000,0x0000009976800000) (1024K)]
+  0x00000243121f4160 ConcurrentGCThread "G1 Main Marker"            [id=133332, stack(0x0000009976800000,0x0000009976900000) (1024K)]
+  0x00000243121f68a0 WorkerThread "G1 Conc#0"                       [id=137800, stack(0x0000009976900000,0x0000009976a00000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffcd0c1f137]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffcd1595558] Heap_lock - owner thread: 0x0000024312190450
+
+Heap address: 0x000000008a400000, size: 1884 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x000000008a400000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffcd100bba9]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.017 Loaded shared library C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff729be0000 - 0x00007ff729bee000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\java.exe
+0x00007ffd5a540000 - 0x00007ffd5a7a9000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd596d0000 - 0x00007ffd59799000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffd57c70000 - 0x00007ffd58063000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffd57700000 - 0x00007ffd5784b000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffd1a060000 - 0x00007ffd1a078000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\jli.dll
+0x00007ffd1a040000 - 0x00007ffd1a05e000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\VCRUNTIME140.dll
+0x00007ffd59f20000 - 0x00007ffd5a0e4000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffd576d0000 - 0x00007ffd576f7000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffd59860000 - 0x00007ffd5988b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffd3d220000 - 0x00007ffd3d4b3000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.5074_none_3e0d6f78e32fd63f\COMCTL32.dll
+0x00007ffd58070000 - 0x00007ffd5819d000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffd58c10000 - 0x00007ffd58cb9000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffd57bc0000 - 0x00007ffd57c63000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffd59da0000 - 0x00007ffd59dcf000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffd2e940000 - 0x00007ffd2e94c000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\vcruntime140_1.dll
+0x00007ffd0fbe0000 - 0x00007ffd0fc6d000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\msvcp140.dll
+0x00007ffcd08e0000 - 0x00007ffcd1677000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\server\jvm.dll
+0x00007ffd597a0000 - 0x00007ffd59854000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffd58380000 - 0x00007ffd58426000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffd587d0000 - 0x00007ffd588e8000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffd59e70000 - 0x00007ffd59ee4000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffd57530000 - 0x00007ffd5758e000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffd51cc0000 - 0x00007ffd51ccb000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffd50a20000 - 0x00007ffd50a55000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd57510000 - 0x00007ffd57524000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffd564b0000 - 0x00007ffd564cb000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffd2e740000 - 0x00007ffd2e74a000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\jimage.dll
+0x00007ffd4d380000 - 0x00007ffd4d5c2000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffd58450000 - 0x00007ffd587cb000 	C:\WINDOWS\System32\combase.dll
+0x00007ffd58b30000 - 0x00007ffd58c07000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffd3e3d0000 - 0x00007ffd3e40d000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffd57b20000 - 0x00007ffd57bb9000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffd49d60000 - 0x00007ffd49d6f000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\instrument.dll
+0x00007ffd1a020000 - 0x00007ffd1a03f000 	C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\java.dll
+
+JVMTI agents:
+C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.1\lib\idea_rt.jar path:none, loaded, not initialized, instrumentlib options:59306:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.1\bin
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.5074_none_3e0d6f78e32fd63f;C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin\server
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.1\lib\idea_rt.jar=59306:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.1\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 --module-path=C:\Users\mukab\.m2\repository\org\openjfx\javafx-controls\21-ea+24\javafx-controls-21-ea+24-win.jar;C:\Users\mukab\.m2\repository\eu\hansolo\fx\heatmap\21.0.11\heatmap-21.0.11.jar;C:\Users\mukab\.m2\repository\com\gluonhq\attach\audio\4.0.13\audio-4.0.13.jar;C:\Users\mukab\.m2\repository\org\controlsfx\controlsfx\11.1.2\controlsfx-11.1.2.jar;C:\Users\mukab\.m2\repository\com\gluonhq\attach\lifecycle\4.0.13\lifecycle-4.0.13.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-fxml\21-ea+24\javafx-fxml-21-ea+24-win.jar;C:\Users\mukab\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.6.0\kotlin-stdlib-1.6.0-modular.jar;C:\Users\mukab\.m2\repository\com\github\almasb\fxgl\17.2\fxgl-17.2.jar;C:\Users\mukab\.m2\repository\com\github\almasb\fxgl-entity\17.2\fxgl-entity-17.2.jar;C:\Users\mukab\.m2\repository\com\github\almasb\fxgl-io\17.2\fxgl-io-17.2.jar;C:\Users\mukab\.m2\repository\com\github\almasb\fxgl-core\17.2\fxgl-core-17.2.jar;C:\Users\mukab\.m2\repository\org\kordamp\ikonli\ikonli-javafx\12.3.1\ikonli-javafx-12.3.1.jar;C:\Users\mukab\.m2\repository\com\gluonhq\attach\util\4.0.13\util-4.0.13.jar;C:\Users\mukab\.m2\repository\com\gluonhq\attach\storage\4.0.13\storage-4.0.13.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-swing\21.0.4\javafx-swing-21.0.4-win.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-media\21-ea+24\javafx-media-21-ea+24-win.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-base\21.0.4\javafx-base-21.0.4-win.jar;C:\Users\mukab\.m2\repository\org\kordamp\ikonli\ikonli-core\12.3.1\ikonli-core-12.3.1.jar;C:\Users\mukab\.m2\repository\com\github\almasb\fxgl-gameplay\17.2\fxgl-gameplay-17.2.jar;C:\Users\mukab\.m2\repository\eu\hansolo\toolbox\17.0.35\toolbox-17.0.35.jar;C:\Users\mukab\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.1\jackson-databind-2.12.1.jar;C:\Users\mukab\.m2\repository\eu\hansolo\toolboxfx\21.0.7\toolboxfx-21.0.7.jar;C:\Users\mukab\.m2\repository\com\github\almasb\fxgl-scene\17.2\fxgl-Djdk.module.main=com.pharmacyfx 
+java_command: com.pharmacyfx/com.pharmacyfx.DBConnection
+java_class_path (initial): C:\Users\mukab\.m2\repository\org\openjfx\javafx-controls\21-ea+24\javafx-controls-21-ea+24.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-graphics\21-ea+24\javafx-graphics-21-ea+24.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-fxml\21-ea+24\javafx-fxml-21-ea+24.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-web\21-ea+24\javafx-web-21-ea+24.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-media\21-ea+24\javafx-media-21-ea+24.jar;C:\Users\mukab\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\mukab\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.6.0\kotlin-stdlib-common-1.6.0.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-base\21.0.4\javafx-base-21.0.4.jar;C:\Users\mukab\.m2\repository\org\openjfx\javafx-swing\21.0.4\javafx-swing-21.0.4.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 123731968                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1975517184                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 1975517184                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\HP\HP One Agent;C:\Program Files\Git\cmd;C:\xampp\php;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Common Files\Intuit\QBPOSSDKRuntime;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\nasm;C:\Users\mukab\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\mukab\AppData\Local\Programs\Python\Python313\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\mukab\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.1\bin;;C:\Users\mukab\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\mukab\AppData\Local\ComposerSetup\bin;C:\Users\mukab\AppData\Roaming\Composer\vendor\bin;C:\Users\mukab\.dotnet\tools;C:\Users\mukab\AppData\Roaming\npm;C:\nasm;
+USERNAME=mukab
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD
+TMP=C:\Users\mukab\AppData\Local\Temp
+TEMP=C:\Users\mukab\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.5074)
+OS uptime: 19 days 19:25 hours
+Hyper-V role detected
+
+CPU: total 12 (initial active 12) (12 cores per cpu, 2 threads per core) family 25 model 80 stepping 0 microcode 0xa500011, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4a, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, hv, rdtscp, rdpid, fsrm, f16c, cet_ss
+Processor Information for processor 0
+  Max Mhz: 2301, Current Mhz: 2010, Mhz Limit: 2301
+Processor Information for processor 1
+  Max Mhz: 2301, Current Mhz: 2010, Mhz Limit: 2301
+Processor Information for processor 2
+  Max Mhz: 2301, Current Mhz: 2301, Mhz Limit: 2301
+Processor Information for processor 3
+  Max Mhz: 2301, Current Mhz: 2301, Mhz Limit: 2301
+Processor Information for processor 4
+  Max Mhz: 2301, Current Mhz: 2301, Mhz Limit: 2301
+Processor Information for processor 5
+  Max Mhz: 2301, Current Mhz: 2301, Mhz Limit: 2301
+Processor Information for processor 6
+  Max Mhz: 2301, Current Mhz: 2301, Mhz Limit: 2301
+Processor Information for processor 7
+  Max Mhz: 2301, Current Mhz: 2010, Mhz Limit: 2301
+Processor Information for processor 8
+  Max Mhz: 2301, Current Mhz: 2010, Mhz Limit: 2301
+Processor Information for processor 9
+  Max Mhz: 2301, Current Mhz: 2301, Mhz Limit: 2301
+Processor Information for processor 10
+  Max Mhz: 2301, Current Mhz: 2010, Mhz Limit: 2301
+Processor Information for processor 11
+  Max Mhz: 2301, Current Mhz: 2301, Mhz Limit: 2301
+
+Memory: 4k page, system-wide physical 7531M (239M free)
+TotalPageFile size 31083M (AvailPageFile size 54M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 64M, peak: 182M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.8+9-LTS) for windows-amd64 JRE (21.0.8+9-LTS), built on 2025-07-15T00:00:00Z by "admin" with MS VC++ 17.7 (VS2022)
+
+END.

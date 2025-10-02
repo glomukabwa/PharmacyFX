@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharmacyfx.UpdateController">
+   <children>
+      <AnchorPane prefHeight="532.0" prefWidth="230.0" style="-fx-background-color: #000000;" />
+      <AnchorPane prefHeight="532.0" prefWidth="575.0">
+         <children>
+            <Label layoutX="155.0" layoutY="30.0" text="Search and Update">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label layoutX="52.0" layoutY="81.0" text="Drug Name:">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="52.0" layoutY="188.0" text="Drug Name:">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="44.0" layoutY="246.0" text="  Drug Use:">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="55.0" layoutY="304.0" text="Drug Amount:">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="363.0" text="Date of Purchase:">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="52.0" layoutY="425.0" text="Pharmacist Id:">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="lblsname" layoutX="224.0" layoutY="76.0" prefHeight="32.0" prefWidth="272.0" />
+            <TextField fx:id="lbldname" layoutX="224.0" layoutY="194.0" prefHeight="32.0" prefWidth="272.0" />
+            <TextField fx:id="lblduse" layoutX="224.0" layoutY="252.0" prefHeight="32.0" prefWidth="272.0" />
+            <TextField fx:id="lbldamount" layoutX="224.0" layoutY="310.0" prefHeight="32.0" prefWidth="272.0" />
+            <TextField fx:id="lblpharmId" layoutX="224.0" layoutY="425.0" prefHeight="32.0" prefWidth="272.0" />
+            <Button layoutX="291.0" layoutY="125.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="168.0" style="-fx-background-color: #000000;" text="Search" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <DatePicker fx:id="lblpurchase" layoutX="224.0" layoutY="369.0" prefHeight="32.0" prefWidth="272.0" />
+            <Button fx:id="btnupdate" layoutX="342.0" layoutY="488.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="168.0" style="-fx-background-color: #000000;" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnclear" layoutX="92.0" layoutY="488.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="168.0" style="-fx-background-color: #000000;" text="Clear" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+   </children>
+</HBox>
