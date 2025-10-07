@@ -13,6 +13,7 @@ import javax.mail.internet.InternetAddress;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -95,7 +96,16 @@ public class SignInController implements Initializable{
                 //The genSalt() method generates salt. This means it generates a random string that is mixed with the password entered using hashpw().
                 //The 12 in the brackets means the cost factor. The higher tha cost factor, the more secure the password is. The default is usually 10 so if you don't specify a number in the brackets, that will be ur default
                 //The length of the hashed password is normally 22. The cost factor doesn't affect this
-                //Oh also, don't forget about email validation. U never even did it with Swing, do it!!! Bye!
+
+                if (isDuplicate(Email)){
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Duplicated Email");
+                    alert.setHeaderText(" Email already exists");//Header is the text between the one on the window and the message
+                    alert.setContentText("Please enter another email.This one already exists. " + sadFace);
+                    alert.showAndWait();
+                }else{
+                    SignUp(Fname,Lname,Email,hashedPassword);
+                }
             }
         });
     }
@@ -117,6 +127,26 @@ public class SignInController implements Initializable{
         return result;
     }
 
+    //Checking to make sure that email doesn't already exist:
+    public static boolean isDuplicate(String email){
+        boolean result = false;//The default is false
+        String query = "SELECT email FROM pharmacists WHERE email = ?";
+
+        try(Connection conn = DBConnection.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(query)){
+            stmt.setString(1,email);
+
+            ResultSet res = stmt.executeQuery();
+            if(res.next()){
+                result = true;//It will become true if there is such an email in the database already
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
     public void SignUp(String fname, String lname, String email, String password){
         String query = "INSERT INTO pharmacists (fname, lname, email, password) VALUES (?, ?, ?, ?)";
 
@@ -132,13 +162,20 @@ public class SignInController implements Initializable{
             if(rows_inserted  > 0){
                 System.out.println("Successful Sign Up");
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Successful Message");
+                alert.setHeaderText("Successful Sign Up");
                 alert.setContentText("You have successfully signed up! " + smileyFace);
-                alert.show();
+                alert.showAndWait();//Chat has advised me to use this instead oh show()
+                //The difference is that showAndWait() stops the execution till the user closes the alert box while show() just shows the alert box but the execution continues
+                //So if you think user input is important, use show and wait
+                //showAndWait will ensure that eg the scene doesn't switch before the user has pressed OK or close
             }else{
                 System.out.println("Unsuccessful Sign Up");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Unsuccessful Message");
+                alert.setHeaderText("Unsuccessful Sign Up");
                 alert.setContentText("Unsuccessful Sign Up! " + sadFace);
-                alert.show();
+                alert.showAndWait();
             }
         } catch (SQLException e) {
             e.printStackTrace();
