@@ -11,6 +11,9 @@ module com.pharmacyfx {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires jbcrypt;
+    requires mail;
+    requires passay;
 
     opens com.pharmacyfx to javafx.fxml;
     exports com.pharmacyfx;

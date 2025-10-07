@@ -4,10 +4,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharmacyfx.SignInController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharmacyfx.SignInController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="325.0" style="-fx-background-color: #000000;" />
-      <AnchorPane prefHeight="400.0" prefWidth="440.0">
+      <AnchorPane prefHeight="466.0" prefWidth="202.0" style="-fx-background-color: #000000;" />
+      <AnchorPane prefHeight="446.0" prefWidth="604.0">
          <children>
             <Label layoutX="23.0" layoutY="76.0" text="First Name:">
                <font>
@@ -32,22 +32,37 @@
             <TextField fx:id="txtfname" layoutX="130.0" layoutY="70.0" prefHeight="33.0" prefWidth="210.0" />
             <TextField fx:id="txtlname" layoutX="130.0" layoutY="124.0" prefHeight="33.0" prefWidth="210.0" />
             <TextField fx:id="txtemail" layoutX="130.0" layoutY="172.0" prefHeight="33.0" prefWidth="210.0" />
-            <Button fx:id="btnsignup" layoutX="74.0" layoutY="298.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="227.0" style="-fx-background-color: #000000;" text="Sign Up" textFill="WHITE">
+            <Button fx:id="btnsignup" layoutX="121.0" layoutY="325.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="227.0" style="-fx-background-color: #000000;" text="Sign Up" textFill="WHITE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Button>
-            <Label layoutX="85.0" layoutY="360.0" text="Already have an account?">
+            <Label layoutX="130.0" layoutY="375.0" text="Already have an account?">
                <font>
                   <Font name="Arial Rounded MT Bold" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="btnlogin" layoutX="235.0" layoutY="356.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Log In" textFill="#2c24cc" underline="true">
+            <Button fx:id="btnlogin" layoutX="281.0" layoutY="371.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Log In" textFill="#2c24cc" underline="true">
                <font>
                   <Font name="Arial Rounded MT Bold" size="12.0" />
                </font>
             </Button>
             <PasswordField fx:id="txtpassword" layoutX="130.0" layoutY="223.0" prefHeight="33.0" prefWidth="210.0" />
+            <Label fx:id="lblemailstatus" layoutX="348.0" layoutY="178.0" prefHeight="22.0" prefWidth="210.0">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="190.0" layoutY="27.0" text="Sign Up">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblpwstatus" layoutX="348.0" layoutY="229.0" prefWidth="210.0" wrapText="true">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="10.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
    </children>
 </HBox>
