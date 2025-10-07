@@ -97,14 +97,22 @@ public class SignInController implements Initializable{
                 //The 12 in the brackets means the cost factor. The higher tha cost factor, the more secure the password is. The default is usually 10 so if you don't specify a number in the brackets, that will be ur default
                 //The length of the hashed password is normally 22. The cost factor doesn't affect this
 
-                if (isDuplicate(Email)){
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Duplicated Email");
-                    alert.setHeaderText(" Email already exists");//Header is the text between the one on the window and the message
-                    alert.setContentText("Please enter another email.This one already exists. " + sadFace);
-                    alert.showAndWait();
+                if(!Fname.isEmpty() && !Lname.isEmpty() && !Email.isEmpty() && !hashedPassword.isEmpty()){
+                    if (isDuplicate(Email)){
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Duplicated Email");
+                        alert.setHeaderText(" Email already exists");//Header is the text between the one on the window and the message
+                        alert.setContentText("Please enter another email.This one already exists. " + sadFace);
+                        alert.showAndWait();
+                    }else{
+                        SignUp(Fname,Lname,Email,hashedPassword);
+                    }
                 }else{
-                    SignUp(Fname,Lname,Email,hashedPassword);
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Empty Fields");
+                    alert.setHeaderText("One or more fields is empty");
+                    alert.setContentText("Please fill in all fields");
+                    alert.showAndWait();
                 }
             }
         });
