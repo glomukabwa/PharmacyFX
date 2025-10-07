@@ -3,13 +3,18 @@ package com.pharmacyfx;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import org.mindrot.jbcrypt.BCrypt;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,6 +35,8 @@ public class SignInController implements Initializable{
     private PasswordField txtpassword;
     @FXML
     private Button btnsignup;
+    @FXML
+    private Button btnlogin;
     @FXML
     private Label lblemailstatus;
     @FXML
@@ -97,7 +104,7 @@ public class SignInController implements Initializable{
                 //The 12 in the brackets means the cost factor. The higher tha cost factor, the more secure the password is. The default is usually 10 so if you don't specify a number in the brackets, that will be ur default
                 //The length of the hashed password is normally 22. The cost factor doesn't affect this
 
-                if(!Fname.isEmpty() && !Lname.isEmpty() && !Email.isEmpty() && !hashedPassword.isEmpty()){
+                if(!Fname.isEmpty() && !Lname.isEmpty() && !Email.isEmpty() && !hashedPassword.isEmpty()){//Ensuring all fields have been filled
                     if (isDuplicate(Email)){
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("Duplicated Email");
@@ -111,8 +118,30 @@ public class SignInController implements Initializable{
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Empty Fields");
                     alert.setHeaderText("One or more fields is empty");
-                    alert.setContentText("Please fill in all fields");
+                    alert.setContentText("Please fill in all the fields");
                     alert.showAndWait();
+                }
+            }
+        });
+
+        //Changing to Log In Page
+        //I can create a method like I did for database connections to change the Scenes but I'm trying to ensure I remember how to do this that's why I'll be creating this method afresh in every page that needs it:
+        btnlogin.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("log-in.fxml"));
+                    Scene scene = new Scene(loader.load());
+                    Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+                    //Remember that we can't use getScene() without casting it to a Node. actionEvent.getSource() just returns a generic object but we need to cast it to a Nodes( nodes are everything in FX:buttons, labels ect)
+                    //cz nodes are the ones that belong to scenes and then scenes are the ones that belong to a Window so it's like we're climbing a ladder to get the current Stage so that we can be able to change it as u'll see in the next line
+                    stage.setTitle("Log In Page");
+                    stage.setScene(scene);
+                    stage.show();
+                } catch (IOException e) {
+                    //If you don't include this IOException catch, an error occurs. I'm not very sure why
+                    //You'll notice that in HelloApplication, it throws an Exception instead. And initialization of the Stage is done as a parameter. I think the methods do the same thing but just use this chunk of code instead cz it's easier to understand.The other one is automatically brought by IntelliJ when the project is made
+                    e.printStackTrace();
                 }
             }
         });
@@ -180,9 +209,9 @@ public class SignInController implements Initializable{
             }else{
                 System.out.println("Unsuccessful Sign Up");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Unsuccessful Message");
+                alert.setTitle("Failure Message");
                 alert.setHeaderText("Unsuccessful Sign Up");
-                alert.setContentText("Unsuccessful Sign Up! " + sadFace);
+                alert.setContentText("Please try again" + sadFace);
                 alert.showAndWait();
             }
         } catch (SQLException e) {
