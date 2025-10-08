@@ -31,9 +31,6 @@ public class LogInController implements Initializable {
     @FXML
     Button btnsignup;
 
-    //Emojis
-    String smileyFace = "\uD83D\uDE0A";
-    String sadFace = "\uD83D\uDE1E";
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         btnlogin.setOnAction(new EventHandler<ActionEvent>() {
@@ -84,20 +81,20 @@ public class LogInController implements Initializable {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Success Message");
                     alert.setHeaderText("Successful Log In!");
-                    alert.setContentText("You have successfully logged in! " + smileyFace);
+                    alert.setContentText("You have successfully logged in! " + Emojis.smileyFace);
                     alert.showAndWait();
                 }else{
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Failure Message");
                     alert.setHeaderText("Unsuccessful Log In!");
-                    alert.setContentText("Please enter the right credentials " + sadFace);
+                    alert.setContentText("Please enter the right credentials " + Emojis.sadFace);
                     alert.showAndWait();
                 }
             }else{//If user hasn't entered an existing email:
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Failure Message");
                 alert.setHeaderText("Unsuccessful Log In!");
-                alert.setContentText("Email does not exist " + sadFace);
+                alert.setContentText("Email does not exist " + Emojis.sadFace);
                 alert.showAndWait();
             }
 

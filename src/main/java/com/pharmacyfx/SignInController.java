@@ -42,12 +42,6 @@ public class SignInController implements Initializable{
     @FXML
     private Label lblpwstatus;
 
-    //I'm trying to give my application more personality so I'm adding emojis:
-    String smileyFace = "\uD83D\uDE0A";//When you copy an emoji, then put it in between quotes like this, it appears as its unicode though when I paste it outside, it appears like this see: 😊
-    String sadFace = "\uD83D\uDE1E";
-    String tick = "✅";//Ok the emojis can also be stored like this. For some reason, haileti code anymore
-    String cross = "❌";
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Email Validation using Action Listener:
@@ -62,12 +56,12 @@ public class SignInController implements Initializable{
             if (newValue.trim().isEmpty()){//This checks if there is a new value and if there isn't, the label remains empty meaning invisible
                 lblemailstatus.setText("");
             } else if(isValidEmail(newValue.trim())){
-                lblemailstatus.setText(tick + " Valid email");//So apparently some fonts don't support emojis so the colors of this emojis won't show
+                lblemailstatus.setText(Emojis.tick + " Valid email");//So apparently some fonts don't support emojis so the colors of this emojis won't show
                 //Chat says I can change the font of these labels to a font that supports emojis:
                 //lblemailstatus.setStyle("-fx-font-family: 'Segoe UI Emoji';"); //I'm not gonna do this though cz I want uniformity of font plus I really like the one I'm using. I've tested it though and it's still black and white but the emojis are clearer
                 lblemailstatus.setStyle("-fx-text-fill: green;");
             } else {
-                lblemailstatus.setText(cross + "Invalid Email");
+                lblemailstatus.setText(Emojis.cross + "Invalid Email");
                 //lblemailstatus.setStyle("-fx-font-family: 'Segoe UI Emoji;'");
                 lblemailstatus.setStyle("-fx-text-fill: red;");
             }
@@ -109,7 +103,7 @@ public class SignInController implements Initializable{
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("Duplicated Email");
                         alert.setHeaderText(" Email already exists");//Header is the text between the one on the window and the message
-                        alert.setContentText("Please enter another email.This one already exists. " + sadFace);
+                        alert.setContentText("Please enter another email.This one already exists. " + Emojis.sadFace);
                         alert.showAndWait();
                     }else{
                         SignUp(Fname,Lname,Email,hashedPassword);
@@ -201,7 +195,7 @@ public class SignInController implements Initializable{
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Successful Message");
                 alert.setHeaderText("Successful Sign Up");
-                alert.setContentText("You have successfully signed up! " + smileyFace);
+                alert.setContentText("You have successfully signed up! " + Emojis.smileyFace);
                 alert.showAndWait();//Chat has advised me to use this instead oh show()
                 //The difference is that showAndWait() stops the execution till the user closes the alert box while show() just shows the alert box but the execution continues
                 //So if you think user input is important, use show and wait
@@ -211,7 +205,7 @@ public class SignInController implements Initializable{
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Failure Message");
                 alert.setHeaderText("Unsuccessful Sign Up");
-                alert.setContentText("Please try again" + sadFace);
+                alert.setContentText("Please try again" + Emojis.sadFace);
                 alert.showAndWait();
             }
         } catch (SQLException e) {
