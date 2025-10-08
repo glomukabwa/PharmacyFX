@@ -34,11 +34,11 @@
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="lbldname" layoutX="237.0" layoutY="88.0" prefHeight="34.0" prefWidth="265.0" />
-            <TextField fx:id="lblduse" layoutX="237.0" layoutY="150.0" prefHeight="34.0" prefWidth="265.0" />
-            <TextField fx:id="lbldamount" layoutX="237.0" layoutY="205.0" prefHeight="34.0" prefWidth="265.0" />
-            <TextField fx:id="lblpharmId" layoutX="237.0" layoutY="332.0" prefHeight="34.0" prefWidth="265.0" />
-            <DatePicker fx:id="lblpurchase" layoutX="237.0" layoutY="268.0" prefHeight="34.0" prefWidth="265.0" />
+            <TextField fx:id="txtdname" layoutX="237.0" layoutY="88.0" prefHeight="34.0" prefWidth="265.0" />
+            <TextField fx:id="txtduse" layoutX="237.0" layoutY="150.0" prefHeight="34.0" prefWidth="265.0" />
+            <TextField fx:id="txtdamount" layoutX="237.0" layoutY="205.0" prefHeight="34.0" prefWidth="265.0" />
+            <TextField fx:id="txtpharmId" layoutX="237.0" layoutY="332.0" prefHeight="34.0" prefWidth="265.0" />
+            <DatePicker fx:id="txtpurchase" layoutX="237.0" layoutY="268.0" prefHeight="34.0" prefWidth="265.0" />
             <Label layoutX="171.0" layoutY="31.0" text="Create Records">
                <font>
                   <Font name="Arial Rounded MT Bold" size="27.0" />

@@ -1,0 +1,22 @@
+//Pharmacist table
+CREATE TABLE pharmacists(
+pharmID INT AUTO_INCREMENT PRIMARY KEY,
+fname VARCHAR(100) NOT NULL,
+lname VARCHAR(100) NOT NULL,
+email VARCHAR(100) NOT NULL UNIQUE,
+password VARCHAR(100) NOT NULL
+);
+
+//Drug Table
+USE pharmacyfx;
+CREATE TABLE drugs (
+drugId INT AUTO_INCREMENT PRIMARY KEY,
+dname VARCHAR(100) NOT NULL,
+duse VARCHAR(100) NOT NULL,
+damount VARCHAR(100) NOT NULL,
+dpurchase DATE NOT NULL,
+pharmacistId INT,
+FOREIGN KEY (pharmacistId) REFERENCES pharmacists(pharmID)
+ON UPDATE CASCADE //This specifies that if a primary key value in the parent table is updated, the corresponding foreign key values in the child table are automatically updated to reflect this change
+ON DELETE SET NULL //It specifies that when a row in the parent table (the table containing the primary key referenced by the foreign key) is deleted, the corresponding foreign key values in the child table (the table containing the foreign key) are automatically updated to NULL
+);
