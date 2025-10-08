@@ -52,9 +52,10 @@ public class CreateController implements Initializable {
                 if(!dname.isEmpty() && !duse.isEmpty() && !damount.isEmpty() && dpurchase != null && !pharmId.isEmpty()){
                     //isEmpty() only works on text so with date, you just check if it is null or containing a value
                     //It also doesn't work for int so that's another reason why I've parsed it to an Integer after
-                    int intpharmId = parseInt(pharmId);
+                    int intpharmId = Integer.parseInt(pharmId);//Sometimes parseInt() can work alone but to be safe we specify the class it belongs to. Note: for Doubles:Double.parseDouble(), Floats:Float.parseFloat() etc
                     CreateRecord(dname,duse,damount,dpurchase,intpharmId);
                 }else{
+                    System.out.println("Empty fields detected");
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Failure Message");
                     alert.setHeaderText("Empty fields detected");
@@ -90,12 +91,14 @@ public class CreateController implements Initializable {
 
             int rows_inserted = stmt.executeUpdate();
             if(rows_inserted > 0){
+                System.out.println("Record created successfully");
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Success Message");
                 alert.setHeaderText("Successful Addition");
                 alert.setContentText("You have successfully inserted a record! " + Emojis.smileyFace);
                 alert.showAndWait();
             }else{
+                System.out.println("Unsuccessful creation of record");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Failure Message");
                 alert.setHeaderText("Unsuccessful Addition");
