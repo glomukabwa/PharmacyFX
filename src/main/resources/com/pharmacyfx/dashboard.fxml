@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox style="-fx-background-color: #E7E7E7;" BorderPane.alignment="CENTER">
+         <!--Notice that I have removed the prefHeight. The only reason this is working is cz this container has components but if it
+         didn't, it would've existed but shrunk completely. I've not done this with the main pane(Border Pane) cz I want it to have
+         a default size and if I remove the prefHeight and width, it'll act like fit-content in css which looks weird-->
+         <children>
+            <AnchorPane>
+               <children>
+                  <Label layoutX="14.0" layoutY="10.0" prefHeight="66.0" prefWidth="91.0" text="Pharma">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <VBox alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-radius: 0;" text="Overview">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font></Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-radius: 0;" text="Sales">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="35.0" mnemonicParsing="false" style="-fx-background-radius: 0;" text="Inventory">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="61.0" mnemonicParsing="false" style="-fx-background-radius: 0;" text="Suppliers">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="86.0" mnemonicParsing="false" style="-fx-background-radius: 0;" text="Alerts">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" style="-fx-background-radius: 0;" text="Reports">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="162.0" mnemonicParsing="false" style="-fx-background-radius: 0;" text="Calendar">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="BOTTOM_CENTER" VBox.vgrow="ALWAYS">
+               <!--The combination of Vgrow and bottom_center alignment is what pushes the 3 buttons to the bottom-->
+               <!--Vgrow tells it to occupy any space left while bottom_center is self-explanatory-->
+               <!--Also, the .vgrow is for verical growth while .hgrow is for horizontal height-->
+               <children>
+                  <Button mnemonicParsing="false" style="-fx-background-radius: 0;" text="Profile">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-radius: 0;" text="Settings">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="35.0" mnemonicParsing="false" style="-fx-background-radius: 0;" text="Logout">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children></VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="15" left="10" right="10" top="15" />
+         </padding>
+         <!--You could also just put spacing like this: spacing="15" meaning the space between components in the container instead padding.
+         You'd put it where style and alignment are in the Vbox brackets-->
+         <AnchorPane prefHeight="83.0" style="-fx-background-color: #D3D3D3;" VBox.vgrow="NEVER" />
+         <!--Ok so the VBox.vgrow="NEVER" I've put above is unnecessary but I needed it to explain sth-->
+         <!--VBox.vgrow="NEVER" is the default. You don't have to specify it cz the app will never stretch to occupy space if it hasn't been told to-->
+         <!--prefHeight is the preferred Height. There is also minHeight and maxHeight which are self-explanatory.
+         I think they are set when you allow stretching and u wanna control it-->
+         <!--VBox.v/hgrow can be placed in any pane inside the VBox so don't be shocked that it is in an anchorPane-->
+         <!--The VBox.v/hgrow is used to communicate with the VBox container housing all it's components so in this case:-->
+         <!--it is telling the VBox to never allow the anchor pane to grow-->
+         <VBox style="-fx-background-color: #D7D7D7; -fx-border-radius:15; -fx-background-radius:15;" VBox.vgrow="ALWAYS">
+            <!--Above,if you set just the border radius, u won't see the effect cz the background will still have sharp corners so set both-->
+            <VBox.margin>
+               <Insets bottom="10" top="10" />
+            </VBox.margin>
+         </VBox>
+         <VBox style="-fx-background-color: #D7D7D7; -fx-border-radius:15; -fx-background-radius:15;" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+               <Insets top="10" />
+            </VBox.margin>
+         </VBox>
+      </VBox>
+   </center>
+   <right>
+      <VBox prefHeight="487.0" prefWidth="206.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER" maxWidth="-Infinity">
+         <!--hgrow only works for components that can stretch vertically which are HBox and Grid Pane so I can't use it here-->
+         <!--vgrow can't work for HBox also. GridPane however allows both. I'm actually thinking of switching to that rn cz things
+         don't look the same when I view it in full screen and I don't like it-->
+         <!--maxWidth="-Infinity" is almost like hgrow cz I allows the app to expand if there's space but then BorderPane prioritizes
+         the center part in horizontal growth so that's why it's not stretching the way I want it to stretch(the way hgrow would've
+         made it stretch)-->
+         <padding>
+            <Insets bottom="15" left="10" right="10" top="15" />
+         </padding>
+         <children>
+            <VBox style="-fx-background-color: #E7E7E7; -fx-border-radius: 15; -fx-background-radius: 15;" VBox.vgrow="ALWAYS" >
+               <VBox.margin>
+                  <Insets bottom="20" />
+               </VBox.margin>
+            </VBox>
+            <AnchorPane style="-fx-background-color: #E7E7E7; -fx-border-radius: 15; -fx-background-radius: 15;" VBox.vgrow="ALWAYS"/>
+            <!--I've just noticed that I didn't have to remove all the prefWidths and heights, I could've just added vgrow or hgrow to
+            make them stretch but oh well, it's done at least I've learnt-->
+         </children></VBox>
+   </right>
+</BorderPane>
