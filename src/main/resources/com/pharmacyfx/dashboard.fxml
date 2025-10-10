@@ -62,7 +62,7 @@
             <VBox alignment="BOTTOM_CENTER" VBox.vgrow="ALWAYS">
                <!--The combination of Vgrow and bottom_center alignment is what pushes the 3 buttons to the bottom-->
                <!--Vgrow tells it to occupy any space left while bottom_center is self-explanatory-->
-               <!--Also, the .vgrow is for verical growth while .hgrow is for horizontal height-->
+               <!--Also, the .vgrow is for vertical growth while .hgrow is for horizontal height-->
                <children>
                   <Button mnemonicParsing="false" style="-fx-background-radius: 0;" text="Profile">
                      <font>

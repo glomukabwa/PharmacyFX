@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="812.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+  <columnConstraints>
+    <ColumnConstraints percentWidth="10" />
+    <ColumnConstraints percentWidth="70" />
+      <ColumnConstraints percentWidth="20" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints percentHeight="100" />
+  </rowConstraints>
+    <!-- Sidebar -->
+    <VBox style="-fx-background-color: #A9A9A9;" GridPane.columnIndex="0">
+        <padding>
+            <Insets top="10" bottom="10"/>
+        </padding>
+        <!-- 1st Section -->
+        <AnchorPane prefHeight="50" style="-fx-background-color: #FFFFFF;" >
+            <Label text="Pharma"
+            AnchorPane.rightAnchor="5" AnchorPane.leftAnchor="5" AnchorPane.bottomAnchor="10" AnchorPane.topAnchor="10">
+            <font>
+               <Font name="Arial Rounded MT Bold" size="18.0" />
+            </font></Label>
+        </AnchorPane>
+
+        <!-- 2nd Section -->
+        <VBox VBox.vgrow="ALWAYS" style="-fx-background-color: #FFFFFF;">
+            <Button text="Overview" maxWidth="Infinity" style="-fx-border-radius: 0; -fx-background-radius: 0;">
+                <font>
+                    <Font name="Arial Rounded MT Bold" />
+                </font>
+            </Button>
+            <Button text="Sales"  maxWidth="Infinity" style="-fx-border-radius: 0; -fx-background-radius: 0;">
+                <font>
+                    <Font name="Arial Rounded MT Bold" />
+                </font>
+            </Button>
+            <Button text="Inventory" maxWidth="Infinity" style="-fx-border-radius: 0; -fx-background-radius: 0;">
+                <font>
+                    <Font name="Arial Rounded MT Bold" />
+                </font>
+            </Button>
+            <Button text="Suppliers" maxWidth="Infinity" style="-fx-border-radius: 0; -fx-background-radius: 0;">
+                <font>
+                    <Font name="Arial Rounded MT Bold" />
+                </font>
+            </Button>
+            <Button text="Alerts" maxWidth="Infinity" style="-fx-border-radius: 0; -fx-background-radius: 0;">
+                <font>
+                    <Font name="Arial Rounded MT Bold" />
+                </font>
+            </Button>
+            <Button text="Calendar" maxWidth="Infinity" style="-fx-border-radius: 0; -fx-background-radius: 0;">
+                <font>
+                    <Font name="Arial Rounded MT Bold" />
+                </font>
+            </Button>
+        </VBox>
+
+        <!-- 3rd Section -->
+        <VBox style="-fx-background-color:#FFFFFF;">
+            <Button text="Profile" maxWidth="Infinity" style="-fx-border-radius: 0; -fx-background-radius: 0;">
+                <font>
+                    <Font name="Arial Rounded MT Bold" />
+                </font>
+            </Button>
+            <Button text="Settings" maxWidth="Infinity" style="-fx-border-radius: 0; -fx-background-radius: 0;">
+                <font>
+                    <Font name="Arial Rounded MT Bold" />
+                </font>
+            </Button>
+            <Button text="Logout" maxWidth="Infinity" style="-fx-border-radius: 0; -fx-background-radius: 0;">
+                <font>
+                    <Font name="Arial Rounded MT Bold" />
+                </font>
+            </Button>
+        </VBox>
+    </VBox>
+
+    <!-- Middle area -->
+    <VBox GridPane.columnIndex="1" style="-fx-background-color: #D3D3D3;" spacing="15">
+        <padding>
+            <Insets top="10" bottom="10" left="10" right="10"/>
+        </padding>
+        <!-- 1st Section -->
+        <AnchorPane style="-fx-background-color: #FFFFFF;">
+            <Label text="Hello User"
+            AnchorPane.topAnchor="10" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+                <!--(Above)This is how you set padding for Anchor panes. The one for insets is supported by Vbox, HBox, Grid and Border
+                Notice that I've put it inside the component in the anchor pane. If I had many other components, I'd have to place them
+                in another container then placed these instructions in the container-->
+                <font>
+                    <Font name="Arial Rounded MT Bold" size="30"/>
+                </font>
+            </Label>
+        </AnchorPane>
+
+        <!-- 2nd Section -->
+        <VBox VBox.vgrow="ALWAYS" style="-fx-background-color: #FFFFFF; -fx-border-radius: 15; -fx-background-radius: 15;" spacing="15">
+            <padding>
+                <Insets top="10" bottom="10" left="10" right="10"/>
+            </padding>
+            <Label text="Today's Sales">
+                <font>
+                    <Font name="Arial Rounded MT Bold" size="20"/>
+                </font>
+            </Label>
+            <HBox style="-fx-background-color: #A9A9A9;" spacing="Infinity">
+                <VBox minHeight="50" spacing="10" style="-fx-background-color: #FFFFFF;">
+                    <Label text="Goal">
+                        <font>
+                            <Font name="Arial Rounded MT Bold" size="15"/>
+                        </font>
+                    </Label>
+                    <Label text="Ksh 10000">
+                        <font>
+                            <Font name="Arial Rounded MT Bold"/>
+                        </font>
+                    </Label>
+                </VBox>
+                <VBox minHeight="50" spacing="10" style="-fx-background-color: #FFFFFF;">
+                    <Label text="Current Sales">
+                        <font>
+                            <Font name="Arial Rounded MT Bold" size="15"/>
+                        </font>
+                    </Label>
+                    <Label text="Ksh 0">
+                        <font>
+                            <Font name="Arial Rounded MT Bold"/>
+                        </font>
+                    </Label>
+                </VBox>
+                <VBox minHeight="50" spacing="10" style="-fx-background-color: #FFFFFF;">
+                    <Label text="Pending">
+                        <font>
+                            <Font name="Arial Rounded MT Bold" size="15"/>
+                        </font>
+                    </Label>
+                    <Label text="Ksh 10000">
+                        <font>
+                            <Font name="Arial Rounded MT Bold"/>
+                        </font>
+                    </Label>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <!-- 3rd Section -->
+        <VBox VBox.vgrow="ALWAYS" style="-fx-background-color: #FFFFFF; -fx-border-radius: 15; -fx-background-radius: 15;" >
+            <padding>
+                <Insets top="10" bottom="10" left="10" right="10"/>
+            </padding>
+            <Label text="Weekly Sales">
+                <font>
+                    <Font name="Arial Rounded MT Bold" size="18"/>
+                </font>
+            </Label>
+
+            <!-- Graph -->
+            <!--<BarChart prefHeight="100">
+                <yAxis>
+                    <NumberAxis label="Sales"/>
+                </yAxis>
+                <xAxis>
+                    <CategoryAxis label="Week"/>
+                </xAxis>
+            </BarChart>-->
+        </VBox>
+    </VBox>
+
+    <!-- Right area -->
+    <VBox GridPane.columnIndex="2" spacing="10" style="-fx-background-color: A9A9A9;" >
+        <padding>
+            <Insets top="10" bottom="10" left="10" right="10"/>
+        </padding>
+        <!-- 1st Section -->
+        <VBox VBox.vgrow="ALWAYS" spacing="10" style="-fx-background-color: #FFFFFF; -fx-border-radius: 15; -fx-background-radius: 15;" >
+            <padding>
+                <Insets top="10" bottom="10" left="10" right="10"/>
+            </padding>
+            <!-- Title -->
+            <Label text="Alerts" >
+                <font>
+                    <Font name="Arial Rounded MT Bold" size="18"/>
+                </font>
+            </Label>
+
+            <!-- Alerts -->
+            <VBox VBox.vgrow="ALWAYS" style="-fx-border-radius: 15; -fx-background-radius: 15;" spacing="5" alignment="TOP_CENTER">
+                <!--<Label text="No alerts found">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="12"/>
+                    </font>
+                </Label>-->
+                <VBox style="-fx-background-color: #A9A9A9; -fx-border-radius: 10; -fx-background-radius: 10;" minHeight="50">
+                    <padding>
+                        <Insets top="5" bottom="5" left="5" right="5"/>
+                    </padding>
+                    <Label text="Alert Type">
+                        <font>
+                            <Font name="Arial Rounded MT Bold" size="12"/>
+                        </font>
+                    </Label>
+                    <Label text="Alert Message">
+                        <font>
+                            <Font name="Arial Rounded MT Bold" size="12"/>
+                        </font>
+                    </Label>
+                </VBox>
+                <VBox style="-fx-background-color: #A9A9A9; -fx-border-radius: 10; -fx-background-radius: 10;" minHeight="50">
+                    <padding>
+                        <Insets top="5" bottom="5" left="5" right="5"/>
+                    </padding>
+                    <Label text="Alert Type">
+                        <font>
+                            <Font name="Arial Rounded MT Bold" size="12"/>
+                        </font>
+                    </Label>
+                    <Label text="Alert Message">
+                        <font>
+                            <Font name="Arial Rounded MT Bold" size="12"/>
+                        </font>
+                    </Label>
+                </VBox>
+            </VBox>
+
+            <!-- See More -->
+            <VBox alignment="BOTTOM_RIGHT">
+                <Button text="See More >" alignment="BOTTOM_RIGHT" style="-fx-background-color: transparent;" underline="true">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="10"/>
+                    </font>
+                </Button>
+            </VBox>
+        </VBox>
+
+        <!-- 2nd Section -->
+        <VBox minHeight="100" style="-fx-background-color: #FFFFFF; -fx-border-radius: 15; -fx-background-radius: 15;" spacing="10">
+            <padding>
+                <Insets top="10" bottom="10" left="10" right="10"/>
+            </padding>
+            <Label text="Current Sales">
+                <font>
+                    <Font name="Arial Rounded MT Bold" size="18"/>
+                </font>
+            </Label>
+            <Label text="Ksh 0">
+                <font>
+                    <Font name="Arial Rounded MT Bold" size="14"/>
+                </font>
+            </Label>
+        </VBox>
+    </VBox>
+
+</GridPane>
